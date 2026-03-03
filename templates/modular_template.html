@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>{{ model_name }}</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/introjs.min.css">
+    <style>
+        #elements canvas {
+            background-image: url('static/north_sea_overlay.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href=".">{{ model_name }}</a>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div id="elements"></div>
+</div>
+
+{% for file in package_includes %}
+    <script src="{{ file }}"></script>
+{% endfor %}
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/intro.min.js"></script>
+<script src="js/runcontrol.js"></script>
+<script>
+var model_params = {{ model_params|safe }};
+var elements = [];
+{{ js_code|safe }}
+
+var render_element = function() {
+    for (var i in elements) {
+        elements[i].render(send_data);
+    }
+}
+
+var model = new ModelController(model_params, elements, "{{ model_name }}");
+</script>
+</body>
+</html>
