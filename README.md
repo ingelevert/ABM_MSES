@@ -19,7 +19,7 @@
 
 ## Overview
 
-This project implements an **Agent-Based Model (ABM)** of the Dogger Bank in the North Sea, developed as part of the Modelling Social Ecological Systems (MSES) course. The model simulates the interaction between a fish population and a fleet of fishing vessels under different spatial management policies, specifically the designation of the Dogger Bank as a full Marine Protected Area (MPA).
+This project implements an **Agent-Based Model (ABM)** of the Dogger Bank in the North Sea, developed as part of the Modelling Socio-Ecological Systems (MSES) course. The model simulates the interaction between a fish population and a fleet of fishing vessels under different spatial management policies, specifically the designation of the Dogger Bank as a full Marine Protected Area (MPA).
 
 The simulation runs on a 100 x 100 grid representing the North Sea. Land cells are derived from a real geographic overlay image (`static/north_sea_overlay.png`). Two agent types interact across the grid each time step:
 
