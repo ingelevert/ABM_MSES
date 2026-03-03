@@ -2,7 +2,7 @@
 
 # ABM_MSES
 
-### Agent-Based Model — Dogger Bank Fisheries Management
+### Agent-Based Model — Dogger Bank
 
 ![Simulation Demo](biggif.gif)
 
