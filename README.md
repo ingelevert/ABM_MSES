@@ -19,12 +19,13 @@
 
 ## Overview
 
-This project implements an **Agent-Based Model (ABM)** of the Dogger Bank in the North Sea, developed as part of the Master of Science in Environmental Studies (MSES) program. The model simulates the interaction between a fish population and a fleet of fishing vessels under different spatial management policies — specifically the designation of the Dogger Bank as a Marine Protected Area (MPA).
+This project implements an **Agent-Based Model (ABM)** of the Dogger Bank in the North Sea, developed as part of the Modelling Social Ecological Systems (MSES) course. The model simulates the interaction between a fish population and a fleet of fishing vessels under different spatial management policies, specifically the designation of the Dogger Bank as a full Marine Protected Area (MPA).
 
 The simulation runs on a 100 x 100 grid representing the North Sea. Land cells are derived from a real geographic overlay image (`static/north_sea_overlay.png`). Two agent types interact across the grid each time step:
 
 - **Fish** — move toward a preferred location within the Dogger Bank, reproduce via logistic growth, and die at a density-dependent rate.
-- **Fishers** — depart from a Dutch harbor, navigate toward productive fishing grounds using personal memory and social information, catch fish, and return to port when fuel or quota is exhausted.
+
+- **Fishers** — depart from a Dutch harbor, navigate toward productive fishing grounds using personal memory and social information, catch fish and return to port when fuel or quota is exhausted.
 
 ---
 
@@ -57,7 +58,7 @@ The simulation runs on a 100 x 100 grid representing the North Sea. Land cells a
 ### Policy Scenarios
 
 | Scenario | `fish_policy` | Description |
-|----------|---------------|-------------|
+|----------|---------------|--------------|
 | MPA Protected | `True` (default) | Dogger Bank is a no-fishing zone; fishers are excluded from x: 35–69, y: 55–84 |
 | Open Access | `False` | Fishers can access all water cells including the Dogger Bank |
 
