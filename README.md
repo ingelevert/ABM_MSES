@@ -25,7 +25,7 @@ The simulation runs on a 100 x 100 grid representing the North Sea. Land cells a
 
 - **Fish** — move toward a preferred location within the Dogger Bank, reproduce via logistic growth, and die at a density-dependent rate.
 
-- **Fishers** — depart from a Dutch harbor, navigate toward productive fishing grounds using personal memory and social information, catch fish and return to port when fuel or quota is exhausted.
+- **Fishers** — depart from a Dutch harbor, navigate toward productive fishing grounds using personal memory and social information, catch fish and return to port when fuel is low or when they reached they allowed catch.
 
 ---
 
@@ -51,7 +51,7 @@ The simulation runs on a 100 x 100 grid representing the North Sea. Land cells a
 | Fuel cost per step | 50 units |
 | Max catch per step | 3 fish |
 | Quota (TAK) | 20 fish per trip |
-| Fish price | £10 per fish |
+| Fish price | 10 per fish |
 | Decision model | Personal memory map + social information from nearby successful fishers |
 | Harbor location | Bottom-right coast (99, 0) — Netherlands |
 
@@ -59,8 +59,8 @@ The simulation runs on a 100 x 100 grid representing the North Sea. Land cells a
 
 | Scenario | `fish_policy` | Description |
 |----------|---------------|--------------|
-| MPA Protected | `True` (default) | Dogger Bank is a no-fishing zone; fishers are excluded from x: 35–69, y: 55–84 |
-| Open Access | `False` | Fishers can access all water cells including the Dogger Bank |
+| MPA Protected | true | Dogger Bank is a no-fishing zone; fishers are excluded from x: 35–69, y: 55–84 |
+| Open Access | False | Fishers can access all water cells including the Dogger Bank |
 
 ### Key Parameters
 
@@ -75,7 +75,7 @@ The simulation runs on a 100 x 100 grid representing the North Sea. Land cells a
 
 ### Data Collection
 
-The model records the following metrics every step via Mesa's `DataCollector`:
+The model records the following metrics every step via Mesas `DataCollector`:
 
 | Reporter | Description |
 |----------|-------------|
@@ -83,25 +83,6 @@ The model records the following metrics every step via Mesa's `DataCollector`:
 | `Step Catch` | Fish caught in the current step |
 | `Seasonal Profit` | Cumulative fisher profit per 200-step season |
 | `MSY` | Maximum Sustainable Yield reference |
-
----
-
-## Repository Structure
-
-```
-ABM_MSES/
-├── DoggerbankModel.py          # Core ABM — agents, model, Solara visualization
-├── static/
-│   ├── north_sea_overlay.png   # Geographic land mask (100x100 grid)
-│   └── CanvasModule.js         # Custom JS canvas module
-├── templates/
-│   └── modular_template.html   # HTML template for the visualization
-├── biggif.gif                  # Simulation demo GIF (shown above)
-├── Github/                     # Additional media assets
-└── README.md
-```
-
----
 
 ## Installation
 
@@ -136,7 +117,6 @@ Then open [http://localhost:8765](http://localhost:8765) in your browser. The in
 
 - Mesa ABM Framework: [https://mesa.readthedocs.io/](https://mesa.readthedocs.io/)
 - Solara Visualization: [https://solara.dev/](https://solara.dev/)
-- OSPAR Commission — Dogger Bank MPA: [https://www.ospar.org/](https://www.ospar.org/)
 
 ---
 
@@ -147,5 +127,5 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 <div align="center">
-  Developed as part of the MSES Program
+  Developed as part of the Modelling Marine Socio-Ecological systems course!
 </div>
