@@ -66,8 +66,8 @@ The simulation runs on a 100 x 100 grid representing the North Sea. Land cells a
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
-| `n_fish` | 2,000 | Initial fish population |
-| `n_fisher` | 50 | Number of fishing vessels |
+| `n_fish` | 300 | Initial fish population |
+| `n_fisher` | 60 | Number of fishing vessels |
 | `width` / `height` | 100 | Grid dimensions |
 | `fish_policy` | `True` | Enable Dogger Bank MPA |
 | `FISH_CARRYING_CAPACITY` | `n_fish * 3` | Maximum sustainable fish population |
