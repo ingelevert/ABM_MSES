@@ -82,7 +82,7 @@ The model records the following metrics every step via Mesas `DataCollector`:
 | `Fish` | Total fish population |
 | `Step Catch` | Fish caught in the current step |
 | `Seasonal Profit` | Cumulative fisher profit per 200-step season |
-| `MSY` | Maximum Sustainable Yield reference |
+| `MSY` | We tried to get this working properly but were not able to within the deadline|
 
 ## Installation
 
